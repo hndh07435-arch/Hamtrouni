@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رفع ملف جديد</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            direction: rtl;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .allowed-extensions {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>رفع ملف جديد</h1>
+        
+        <div class="allowed-extensions">
+            <strong>الامتدادات المسموحة:</strong>
+            txt, pdf, png, jpg, jpeg, gif, zip, mp4, mp3
+            <br>
+            <strong>الحد الأقصى للحجم:</strong> 16 ميجابايت
+        </div>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">اختر الملف:</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+            
+            <button type="submit" class="btn">رفع الملف</button>
+        </form>
+        
+        <a href="{{ url_for('index') }}" class="back-link">العودة للصفحة الرئيسية</a>
+    </div>
+</body>
+</html>
